@@ -2,13 +2,13 @@
 
 The website is made up with following Tech Stack:
 
-###### Front-End
+## Front-End
 
 * React JS
 * Material UI
 * Redux 
 
-###### Backend
+## Backend
 
 * Node JS
 * Express JS

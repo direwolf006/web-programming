@@ -1,2 +1,2 @@
 # web-programming
-![Alt text](https://github.com/direwolf006/web-programming/screenshots/homescreen.jpg?raw=true "Home Page")
+![Alt text](https://github.com/direwolf006/web-programming/blob/master/screenshots/homescreen.JPG?raw=true "Home Page")

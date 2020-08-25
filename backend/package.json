@@ -1,0 +1,23 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "backend for srm_devunite",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon  src/index.js ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rittesh.P.V",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^4.1.0",
+    "log4js": "^6.3.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.4",
+    "xss-clean": "^0.1.1"
+  }
+}

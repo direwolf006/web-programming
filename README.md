@@ -2,17 +2,17 @@
 
 The website is made up with following Tech Stack:
 
-Front-End
+######Front-End
 
-*React JS
-*Material UI
-*Redux 
+* React JS
+* Material UI
+* Redux 
 
-Backend
+######Backend
 
-*Node JS
-*Express JS
-*MySQL
+* Node JS
+* Express JS
+* MySQL
 
 
 ![Alt text](https://github.com/direwolf006/web-programming/blob/master/screenshots/homescreen.JPG?raw=true "Home Page")

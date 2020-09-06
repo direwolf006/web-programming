@@ -104,6 +104,40 @@ app.post('/user/new',VerifyRoute,(request,response)=>{
   })
 });
 
+app.post('/post/create',VerifyRoute,(request,response)=>{
+  const{post_id,user_id,post_title,description,date,project_domain,project_type,team_size,languages,frameworks,eligibility,eligible_departments,
+  year_eligibility,notes,user_eligibility}=request.body;
+  console.log(request.body);
+  console.log("logging in");
+  connection.query("INSERT INTO posts VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);",
+    [post_id,user_id,post_title,description,date,project_domain,project_type,team_size,languages,frameworks,eligibility,eligible_departments,
+      year_eligibility,notes,user_eligibility],function(error, result, fields){
+    if(error){
+        errorLogger.error("Error inserting post data when creating the post "+error);
+    }else{
+      connection.query("SELECT * FROM posts;",function(error, resultInner, fields){
+      if(error){
+          errorLogger.error("Error fetching the posts data "+error);
+      }else{
+        console.log(resultInner);
+          response.send(JSON.stringify(resultInner))
+      }
+    })
+    }
+  })
+});
+
+app.post('/post/fetch',VerifyRoute,(request,response)=>{
+  connection.query("SELECT * FROM posts;",function(error, result, fields){
+    if(error){
+        errorLogger.error("Error fetching the posts data "+error);
+    }else{
+      console.log(result);
+      response.send(JSON.stringify(result))
+    }
+  })
+});
+
 app.listen(3005,()=>{
   console.log("Connected to port 3005");
 });

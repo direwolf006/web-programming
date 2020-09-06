@@ -6,6 +6,7 @@ import Posts from './HomePageComponents/Posts';
 import CreatePost from './HomePageComponents/CreatePost';
 import FilterPost from './HomePageComponents/FilterPost';
 import SortIcon from '@material-ui/icons/Sort';
+import { useSelector } from 'react-redux';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -62,13 +63,12 @@ const useStyles = makeStyles((theme) => ({
 
 }))
 
-
 const LightTooltip = withStyles((theme) => ({
     tooltip: {
       backgroundColor: "#3f51b5",
       color: '#FFF',
       boxShadow: theme.shadows[1],
-      fontSize: 18,
+      fontSize: 15,
       padding:10
     },
   }))(Tooltip);
@@ -76,6 +76,7 @@ const LightTooltip = withStyles((theme) => ({
 const HomePage=()=>{
     
     const classes= useStyles();
+    const authState= useSelector((state)=>state.auth)
     const [open,setOpen]=React.useState({
         createPost:false,
         filterPost:false
@@ -135,12 +136,12 @@ const HomePage=()=>{
                 >
                 <FilterPost></FilterPost>
             </Modal>
-                <LightTooltip arrow title="Create a post" placement="top-start">
+                {authState.loggedIn!==null?<LightTooltip arrow title="Create a post" placement="top-start">
                     <Fab aria-label="add" style={{position:"fixed",backgroundColor:"#3f51b5",color:"#FFF"}}
                         className={classes.fab} onClick={()=>OpenCreatePost()}>
                         <AddIcon />
                     </Fab>
-            </LightTooltip>
+                </LightTooltip>:null}
         </div>
     )
 }
